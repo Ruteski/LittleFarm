@@ -85,6 +85,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animation")]
+z_index = 1
 script = ExtResource("1_f7sol")
 _animation = NodePath("AnimationPlayer")
 

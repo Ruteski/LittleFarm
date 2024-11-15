@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://v3kp48m8jh1n"]
+
+[ext_resource type="Texture2D" uid="uid://67g18gyeebb4" path="res://assets/TinyWonderForest/tilemaps/summer tilemap.png" id="1_vmtc5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kkc8"]
+atlas = ExtResource("1_vmtc5")
+region = Rect2(128, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t73t2"]
+atlas = ExtResource("1_vmtc5")
+region = Rect2(128, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3pt1"]
+atlas = ExtResource("1_vmtc5")
+region = Rect2(128, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y60r6"]
+atlas = ExtResource("1_vmtc5")
+region = Rect2(128, 160, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8igdl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kkc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t73t2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3pt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y60r6")
+}],
+"loop": true,
+"name": &"vitoria_regia",
+"speed": 5.0
+}]
+
+[node name="Vitoria_Regia" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8igdl")
+animation = &"vitoria_regia"
+autoplay = "vitoria_regia"
+frame_progress = 0.473379

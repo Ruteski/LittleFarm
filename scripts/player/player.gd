@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export_category("Variaveis")
 @export var _move_speed: float = 75.0
@@ -6,8 +6,10 @@ extends CharacterBody2D
 @export_category("Objetos")
 @export var _animation: AnimationPlayer
 
+var sementes: int = 1
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(_delta: float) -> void:
 	move()
 	animate()
 	
@@ -32,3 +34,7 @@ func animate() -> void:
 			_animation.play("walk_left")
 	else:
 		_animation.play("idle")
+
+
+func _plantou_tomate() -> void:
+	sementes -= 1

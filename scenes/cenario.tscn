@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://bnrswl33w6w60"]
+[gd_scene load_steps=17 format=4 uid="uid://bnrswl33w6w60"]
 
 [ext_resource type="Texture2D" uid="uid://67g18gyeebb4" path="res://assets/TinyWonderForest/tilemaps/summer tilemap.png" id="1_8wqfi"]
 [ext_resource type="Texture2D" uid="uid://dj1chh0vxoquo" path="res://assets/TinyWonderForest/items&objects/summer and spring items.png" id="2_ai451"]
+[ext_resource type="PackedScene" uid="uid://c0hivyprar0sb" path="res://scenes/vitoria_regia_1.tscn" id="3_qobhp"]
+[ext_resource type="PackedScene" uid="uid://p2l3jd2lssdj" path="res://scenes/vitoria_regia_2.tscn" id="4_o1oha"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfxt5"]
 texture = ExtResource("1_8wqfi")
@@ -379,5 +381,19 @@ tile_map_data = PackedByteArray("AAAnAA4AAAAGAAIAAAAnAA8AAAAGAAMAAAAoAA4AAAAHAAI
 tile_set = SubResource("TileSet_g6w20")
 
 [node name="props_lago" type="TileMapLayer" parent="casa"]
-tile_map_data = PackedByteArray("AAAcABAAAAAIAAkAAAAgABMAAAAIAAoAAAAfABEAAAAJAAoAAAAjABAAAAAJAAcAAAAhABEAAAAAAAcAAAAhABIAAAAAAAgAAAAiABEAAAABAAcAAAAiABIAAAABAAgAAAAcABMAAAAAAAkAAAAdABMAAAABAAkAAAAcABIAAAAAAAcAAAAdABIAAAABAAcAAAAkAA8AAQAKAA8AAAAkABAAAQAKABAAAAAlAA8AAQALAA8AAAAlABAAAQALABAAAAAaAA4AAQAKAA0AAAAaAA8AAQAKAA4AAAAbAA4AAQALAA0AAAAbAA8AAQALAA4AAAAjABQAAQAEAA4AAAAcABQAAQADAA4AAAAeAA4AAQADAA4AAAAVABIAAQAEAA8AAAAgAA4AAQADAA8AAAAgABQAAQAGAA8AAAAxAAoAAQAGAA4AAAAdAA4AAQAGAA4AAAA=")
+tile_map_data = PackedByteArray("AAAhABEAAAAAAAcAAAAhABIAAAAAAAgAAAAiABEAAAABAAcAAAAiABIAAAABAAgAAAAcABMAAAAAAAkAAAAdABMAAAABAAkAAAAcABIAAAAAAAcAAAAdABIAAAABAAcAAAAkAA8AAQAKAA8AAAAkABAAAQAKABAAAAAlAA8AAQALAA8AAAAlABAAAQALABAAAAAaAA4AAQAKAA0AAAAaAA8AAQAKAA4AAAAbAA4AAQALAA0AAAAbAA8AAQALAA4AAAAjABQAAQAEAA4AAAAcABQAAQADAA4AAAAeAA4AAQADAA4AAAAVABIAAQAEAA8AAAAgAA4AAQADAA8AAAAgABQAAQAGAA8AAAAxAAoAAQAGAA4AAAAdAA4AAQAGAA4AAAA=")
 tile_set = SubResource("TileSet_7ccds")
+
+[node name="Vitoria_Regia_1" parent="casa/props_lago" instance=ExtResource("3_qobhp")]
+position = Vector2(457, 263)
+rotation = 0.745993
+
+[node name="Vitoria_Regia_2" parent="casa/props_lago" instance=ExtResource("3_qobhp")]
+position = Vector2(567, 310)
+
+[node name="Vitoria_Regia_3" parent="casa/props_lago" instance=ExtResource("4_o1oha")]
+position = Vector2(566, 264)
+rotation = -0.306866
+
+[node name="Vitoria_Regia_4" parent="casa/props_lago" instance=ExtResource("4_o1oha")]
+position = Vector2(505, 297)

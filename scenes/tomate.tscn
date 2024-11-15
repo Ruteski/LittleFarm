@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dr1qjjhfyrlm8"]
+
+[ext_resource type="Texture2D" uid="uid://d31tap0vjlhbq" path="res://assets/FarmingCrops/Crop_Spritesheet.png" id="1_rjf1u"]
+[ext_resource type="Script" path="res://scripts/tomate.gd" id="1_u766q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngrsw"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttbse"]
+atlas = ExtResource("1_rjf1u")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctr3p"]
+atlas = ExtResource("1_rjf1u")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85xow"]
+atlas = ExtResource("1_rjf1u")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7kdn"]
+atlas = ExtResource("1_rjf1u")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl2a8"]
+atlas = ExtResource("1_rjf1u")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1mif"]
+atlas = ExtResource("1_rjf1u")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6kq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttbse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctr3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85xow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7kdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl2a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1mif")
+}],
+"loop": true,
+"name": &"tomate",
+"speed": 5.0
+}]
+
+[node name="Tomate" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+script = ExtResource("1_u766q")
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ngrsw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_f6kq6")
+animation = &"tomate"
+frame_progress = 0.282499
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

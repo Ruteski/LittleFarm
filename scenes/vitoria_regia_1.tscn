@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0hivyprar0sb"]
+
+[ext_resource type="PackedScene" uid="uid://v3kp48m8jh1n" path="res://scenes/vitoria_regia.tscn" id="1_enxvd"]
+
+[node name="Vitoria_Regia_1" instance=ExtResource("1_enxvd")]
