@@ -6,4 +6,4 @@ class_name Principal extends Node2D
 
 
 func _process(_delta: float) -> void:
-	label_sementes.text = str('Sementes: ', player.sementes)
+	label_sementes.text = str('Sementes: ', global_dados.sementes)

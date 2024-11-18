@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		if body.sementes > 0:
+		if global_dados.sementes > 0:
 			body._plantou_tomate()
 			show()
 			await get_tree().create_timer(3.0).timeout
