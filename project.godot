@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-global_dados="*res://scripts/dados.gd"
+Player="*res://scripts/player/player.gd"
 
 [display]
 

@@ -42,4 +42,4 @@ monitorable = false
 position = Vector2(744, 248)
 shape = SubResource("CircleShape2D_jtd6q")
 
-[connection signal="body_entered" from="Sementes" to="Player" method="_on_sementes_body_entered"]
+[connection signal="body_entered" from="Sementes" to="." method="_on_sementes_body_entered"]

@@ -1,18 +1,21 @@
-class_name Player extends CharacterBody2D
+extends CharacterBody2D
 
 @export_category("Variaveis")
 @export var _move_speed: float = 75.0
 
 @export_category("Objetos")
 @export var _animation: AnimationPlayer
+@export var _texture: Sprite2D
 
-@onready var _texture := $Texture
+var sementes: int = 0
+
+func _process(_delta: float) -> void:
+	flip_sprite()
+	animate()
 
 
 func _physics_process(_delta: float) -> void:
 	move()
-	flip_sprite()
-	animate()
 
 
 func move() -> void:
@@ -29,22 +32,20 @@ func move() -> void:
 
 
 func animate() -> void:
-	if velocity:
-		_animation.play("walk")
-	else:
-		_animation.play("idle")
+	if _animation: 
+		if velocity:
+			_animation.play("walk")
+		else:
+			_animation.play("idle")
 
 
 func flip_sprite() -> void:
-	if velocity.x > 0:
-		_texture.flip_h = true
-	elif velocity.x < 0:
-		_texture.flip_h = false
+	if _texture:
+		if velocity.x > 0:
+			_texture.flip_h = true
+		elif velocity.x < 0:
+			_texture.flip_h = false
 
 
-func _plantou_tomate() -> void:
-	global_dados.sementes -= 1
-
-
-func _on_sementes_body_entered(_body: Node2D) -> void:
-	global_dados.sementes += 1
+func plantou_tomate() -> void:
+	sementes -= 1
